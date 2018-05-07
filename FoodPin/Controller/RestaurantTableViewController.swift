@@ -10,10 +10,16 @@ import UIKit
 
 class RestaurantTableViewController: UITableViewController {
 
-    var restaurantNames = ["Cafe Deadend", "Homei", "Teakha"]
-    var restaurantLocations = ["Hong Kong", "Hong Kong", "Hong Kong"]
-    var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House"]
-    var restaurantImages = ["cafedeadend", "homei", "teakha"]
+//    var restaurantNames = ["Cafe Deadend", "Homei", "Teakha"]
+//    var restaurantLocations = ["Hong Kong", "Hong Kong", "Hong Kong"]
+//    var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House"]
+//    var restaurantImages = ["cafedeadend", "homei", "teakha"]
+    
+    var restaurants:[Restaurant] = [Restaurant(name:"Cafe Deadend", type: "Coffee & Tea Shop", location: "Hong Kong", image: "cafedeadend"),
+        Restaurant(name:"Homei", type: "Cafe", location: "Hong Kong", image: "homei"),
+        Restaurant(name:"Teakha", type:"Tea House", location:"Hong Kong", image:"teakha")]
+    
+    // MARK: - View Controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +35,8 @@ class RestaurantTableViewController: UITableViewController {
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! RestaurantDetailViewController
-                destinationController.restaurantImageName = restaurantImages[indexPath.row]
+                //destinationController.restaurantImageName = restaurantImages[indexPath.row]
+                destinationController.restaurant = restaurants[indexPath.row]
             }
         }
     }
@@ -48,7 +55,8 @@ class RestaurantTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return restaurantNames.count
+        //return restaurantNames.count
+        return restaurants.count
     }
 
     
@@ -57,11 +65,15 @@ class RestaurantTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
 
-        // Configure the cell...
-        cell.nameLabel.text = restaurantNames[indexPath.row]
-        cell.locationLabel.text = restaurantLocations[indexPath.row]
-        cell.typeLabel.text = restaurantTypes[indexPath.row]
-        cell.thumbnailImageView.image = UIImage(named: restaurantImages[indexPath.row])
+//        // Configure the cell...
+//        cell.nameLabel.text = restaurantNames[indexPath.row]
+//        cell.locationLabel.text = restaurantLocations[indexPath.row]
+//        cell.typeLabel.text = restaurantTypes[indexPath.row]
+//        cell.thumbnailImageView.image = UIImage(named: restaurantImages[indexPath.row])
+        cell.nameLabel.text = restaurants[indexPath.row].name
+        cell.locationLabel.text = restaurants[indexPath.row].location
+        cell.typeLabel.text = restaurants[indexPath.row].type
+        cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
         return cell
     }
     
