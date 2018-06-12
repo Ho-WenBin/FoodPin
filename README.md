@@ -1,5 +1,6 @@
 # FoodPin
 
+***
 ## Restaurant 類別
 
 新增餐廳列表，請修改以下陣列:
