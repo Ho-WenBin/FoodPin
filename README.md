@@ -3,6 +3,7 @@
 # FoodPin
 程式執行範例:
 <img src="https://github.com/kamiry/FoodPin/blob/master/restaurant_demo.png" width=800>
+![程式執行範例](restaurant_demo.png)
 
 ## Restaurant 類別
 
