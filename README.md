@@ -1,6 +1,7 @@
 <img src="https://www.ncnu.edu.tw/ncnuweb/units/share/%E5%85%A8%E6%A0%A1%E5%85%B1%E7%94%A8/web_material/images/banner/banner_2.gif">
 
-# FoodPin Project
+## FoodPin Project
+
 程式執行範例:
 <img src="https://github.com/kamiry/FoodPin/blob/master/restaurant_demo.png" width=800>
 <!-- ![程式執行範例](restaurant_demo.png) -->
